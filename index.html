@@ -20,7 +20,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Base CSS (theme) -->
+  <!-- Base CSS -->
   <link href="assets/css/style.css" rel="stylesheet" />
 
   <!-- Custom Dark Styling -->
@@ -141,7 +141,7 @@
         <div class="row gy-4">
           <!-- Project 1 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p1" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p1" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-1.jpg" alt="NASA Lunabotics">
                 <div class="p-body">
@@ -154,7 +154,7 @@
 
           <!-- Project 2 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p2" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p2" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-2.png" alt="University Rover Challenge">
                 <div class="p-body">
@@ -167,7 +167,7 @@
 
           <!-- Project 3 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p3" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p3" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-3.png" alt="Autonomous Rover Platform">
                 <div class="p-body">
@@ -180,7 +180,7 @@
 
           <!-- Project 4 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p4" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p4" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-4.png" alt="Buffalo Bytes">
                 <div class="p-body">
@@ -193,7 +193,7 @@
 
           <!-- Project 5 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p5" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p5" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-5.png" alt="Generative Design Drone">
                 <div class="p-body">
@@ -206,7 +206,7 @@
 
           <!-- Project 6 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#p6" class="glightbox project-link" data-gallery="portfolio">
+            <a href="#p6" class="project-link" data-type="inline">
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-6.jpg" alt="Arduino Testing Platform">
                 <div class="p-body">
@@ -225,44 +225,28 @@
 
   <!-- ================= Lightbox Content ================= -->
 
-  <!-- P1: NASA Lunabotics (with video slide) -->
+  <!-- P1 -->
   <div id="p1" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">NASA Lunabotics — Project Lead</h3>
         <div class="glx-meta">Systems integration • FEA & DEM • Team leadership</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
-          <!-- Image slides -->
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-1.jpg" alt=""></div>
           <div class="swiper-slide"><img src="assets/img/portfolio/p1-2.jpg" alt=""></div>
           <div class="swiper-slide"><img src="assets/img/portfolio/p1-3.jpg" alt=""></div>
-
-          <!-- Video slide (upload your file to assets/video/lunabotics-demo.mp4) -->
           <div class="swiper-slide">
             <video controls preload="metadata" poster="assets/img/portfolio/portfolio-1.jpg">
               <source src="assets/video/lunabotics-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
           </div>
-
-          <!-- If you prefer YouTube instead of an mp4, replace the slide above with:
-          <div class="swiper-slide">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Lunabotics"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-          </div>
-          -->
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Led design of regolith excavation rover; coordinated ME/EE/Controls subteams.</li>
@@ -274,14 +258,13 @@
     </div>
   </div>
 
-  <!-- P2: University Rover Challenge -->
+  <!-- P2 -->
   <div id="p2" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">University Rover Challenge — Founder</h3>
         <div class="glx-meta">Mars analog rover • Modular chassis • Electrical & suspension</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-2.png" alt=""></div>
@@ -292,7 +275,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Founded the team; secured funding, workspace, and tooling.</li>
@@ -304,14 +286,13 @@
     </div>
   </div>
 
-  <!-- P3: Autonomous Rover Platform -->
+  <!-- P3 -->
   <div id="p3" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">Autonomous Rover Platform</h3>
         <div class="glx-meta">ROS2 • Gazebo • URDF • Controls & autonomy testbed</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-3.png" alt=""></div>
@@ -322,7 +303,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Built a personal platform for experimenting with nav stack and autonomy.</li>
@@ -333,14 +313,13 @@
     </div>
   </div>
 
-  <!-- P4: Buffalo Bytes -->
+  <!-- P4 -->
   <div id="p4" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">Buffalo Bytes — Researcher</h3>
         <div class="glx-meta">Platform redesign • Generative concepts • Field serviceability</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-4.png" alt=""></div>
@@ -351,7 +330,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Reduced part count with clip-in wheel design and consolidated fasteners.</li>
@@ -362,14 +340,13 @@
     </div>
   </div>
 
-  <!-- P5: Generative Design Drone -->
+  <!-- P5 -->
   <div id="p5" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">Generative Design Drone</h3>
         <div class="glx-meta">Lightweight chassis • Printability • Force distribution</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-5.png" alt=""></div>
@@ -380,7 +357,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Applied generative design for weight/cost while preserving stiffness.</li>
@@ -391,14 +367,13 @@
     </div>
   </div>
 
-  <!-- P6: Arduino Testing Platform -->
+  <!-- P6 -->
   <div id="p6" class="glightbox-desc">
     <div class="glightbox-content">
       <div class="glx-header">
         <h3 class="glx-title">Arduino Testing Platform</h3>
         <div class="glx-meta">Workshops • Onboarding • Intro to sensors/controls</div>
       </div>
-
       <div class="swiper glx-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-6.jpg" alt=""></div>
@@ -409,7 +384,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
-
       <div class="glx-bullets">
         <ul>
           <li>Designed a low-cost robot for club workshops and outreach events.</li>
@@ -429,11 +403,9 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const lightbox = GLightbox({ selector: '.glightbox' });
-
     function initSwipers(ctx = document){
       ctx.querySelectorAll('.glx-swiper').forEach(el => {
-        if (el.dataset.swiperInited) return; // prevent double init
+        if (el.dataset.swiperInited) return;
         new Swiper(el, {
           loop: true,
           spaceBetween: 12,
@@ -445,14 +417,15 @@
       });
     }
 
-    // If content appears inline for any reason
-    initSwipers();
+    const lightbox = GLightbox({ selector: '.project-link' });
 
-    // Initialize inside the modal when it opens
-    lightbox.on('open', () => {
-      const modal = document.querySelector('.glightbox-container') || document;
-      initSwipers(modal);
+    // Initialize sliders when the inline slide content is loaded into the modal
+    lightbox.on('slide_after_load', ({ slide }) => {
+      initSwipers(slide.slideNode || document);
     });
+
+    // Fallback init (if content appears inline during dev)
+    initSwipers();
   </script>
 </body>
 </html>
