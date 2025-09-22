@@ -20,7 +20,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Base CSS -->
+  <!-- Base CSS (theme) -->
   <link href="assets/css/style.css" rel="stylesheet" />
 
   <!-- Custom Dark Styling -->
@@ -52,7 +52,7 @@
     .main{padding:28px}
     .section-title h2{font-weight:700;margin:0 0 12px}
 
-    /* Projects */
+    /* Projects (cards) */
     .project{background:var(--panel-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .2s ease}
     .project:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
     .project img{width:100%;height:190px;object-fit:cover;display:block}
@@ -62,6 +62,19 @@
 
     .footer{color:var(--muted);font-size:.85rem;padding:18px 0 6px;text-align:center}
 
+    /* Hidden inline lightbox content containers */
+    .glightbox-desc{display:none}
+    .glightbox-content{
+      max-width:900px; margin:0 auto; color:#e9edf1;
+      background:#10131a; border:1px solid var(--border); border-radius:16px; overflow:hidden;
+    }
+    .glightbox-content img{width:100%; height:auto; display:block}
+    .glx-body{padding:18px 20px}
+    .glx-title{margin:0 0 8px; font-size:1.25rem; font-weight:700}
+    .glx-meta{color:var(--muted); margin-bottom:10px}
+    .glx-body ul{padding-left:18px; margin:0}
+    .glx-body li{margin:4px 0}
+    .glx-links a{color:#bcd7ff; text-decoration:underline}
     @media (max-width:991.98px){
       .sidebar{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--border)}
     }
@@ -115,70 +128,82 @@
         </div>
 
         <div class="row gy-4">
-          <!-- UB Lunabotics -->
+          <!-- Project 1: UB Lunabotics -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-1.jpg" alt="UB Lunabotics rover">
-              <div class="p-body">
-                <h5>UB Lunabotics — Project Lead</h5>
-                <div class="meta">3D-printed traction wheels, rotating drum excavator; ANSYS FEA + DEM for weight + collection optimization; dust-resistant mechanisms; multi-disciplinary integration.</div>
+            <a href="#p1" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-1.jpg" alt="UB Lunabotics">
+                <div class="p-body">
+                  <h5>UB Lunabotics — Project Lead</h5>
+                  <div class="meta">3D-printed wheels • Drum excavator • FEA/DEM</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- University Rover Challenge -->
+          <!-- Project 2: University Rover Challenge -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-2.jpg" alt="University Rover Challenge">
-              <div class="p-body">
-                <h5>University Rover Challenge — Founder/Lead</h5>
-                <div class="meta">Ground-up rover redesign: new electrical system, improved suspension control, custom 3D-printed wheels, modular subsystems; simulation-driven testing; team funding & budgeting.</div>
+            <a href="#p2" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-2.jpg" alt="University Rover Challenge">
+                <div class="p-body">
+                  <h5>University Rover Challenge — Founder/Lead</h5>
+                  <div class="meta">Redesigned rover • Electrical & suspension • Modular</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Buffalo Bytes Platform -->
+          <!-- Project 3: Buffalo Bytes -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-3.jpg" alt="Buffalo Bytes platform">
-              <div class="p-body">
-                <h5>Buffalo Bytes — Agile Modular Robot</h5>
-                <div class="meta">Generative design to reduce weight & print time; clip-in 3D-printed wheels to cut part count; reinforced motor mount for durability & easier assembly.</div>
+            <a href="#p3" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-3.jpg" alt="Buffalo Bytes">
+                <div class="p-body">
+                  <h5>Buffalo Bytes — Agile Modular Robot</h5>
+                  <div class="meta">Generative design • Clip-in wheels • Durability</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Textile Electrodes Bioimpedance -->
+          <!-- Project 4: Wearable Bioimpedance -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-4.jpg" alt="Wearable bioimpedance research">
-              <div class="p-body">
-                <h5>Wearable Bioimpedance — Textile Electrodes</h5>
-                <div class="meta">Fabricated phantom tissues; compared electrode materials for accuracy & reliability; documented results in papers/posters for CHF monitoring improvements.</div>
+            <a href="#p4" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-4.jpg" alt="Wearable bioimpedance">
+                <div class="p-body">
+                  <h5>Wearable Bioimpedance — Textile Electrodes</h5>
+                  <div class="meta">Phantom tissues • Materials tests • CHF monitoring</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- SAR Drone -->
+          <!-- Project 5: SAR Drone -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-5.jpg" alt="Generative design SAR drone">
-              <div class="p-body">
-                <h5>SAR Drone — Generative Design</h5>
-                <div class="meta">Led 6-person team; 3D-printed chassis optimized for cost, weight, & print time; force-distribution simulations; modular components & open-source framework.</div>
+            <a href="#p5" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-5.jpg" alt="SAR Drone">
+                <div class="p-body">
+                  <h5>SAR Drone — Generative Design</h5>
+                  <div class="meta">Weight & cost optimized • Modular chassis</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Robotics Club @ UB -->
+          <!-- Project 6: Robotics Club -->
           <div class="col-sm-6 col-lg-4">
-            <div class="project">
-              <img src="assets/img/portfolio/portfolio-6.jpg" alt="Robotics Club at UB">
-              <div class="p-body">
-                <h5>Robotics Club @ UB — President</h5>
-                <div class="meta">Scaled membership 8→50; leading four robotic systems (mechanical + control); community outreach & hands-on workshops (Fusion 360, 3D printing, soldering).</div>
+            <a href="#p6" class="glightbox project-link" data-gallery="portfolio">
+              <div class="project">
+                <img src="assets/img/portfolio/portfolio-6.jpg" alt="Robotics Club UB">
+                <div class="p-body">
+                  <h5>Robotics Club @ UB — President</h5>
+                  <div class="meta">Scaled 8→50 • Four active robotics systems</div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -187,12 +212,116 @@
     </div>
   </div>
 
+  <!-- ===== Inline Lightbox Content (hidden) ===== -->
+  <div id="p1" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">UB Lunabotics — Project Lead</h3>
+        <div class="glx-meta">NASA competition rover • Systems integration • FEA & DEM</div>
+        <ul>
+          <li>Designed 3D-printed traction wheels and rotating drum excavator to optimize mass and collection rate.</li>
+          <li>Ran ANSYS FEA + DEM to validate structural integrity and granular flow performance.</li>
+          <li>Integrated dust-resistant mechanisms and led cross-disciplinary collaboration (ME, EE, controls).</li>
+        </ul>
+        <div class="glx-links mt-2">
+          <!-- Optional: <a href="#" target="_blank">Detailed write-up</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="p2" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">University Rover Challenge — Founder/Lead</h3>
+        <div class="glx-meta">Ground-up redesign • Electrical, suspension, custom wheels</div>
+        <ul>
+          <li>Established the team and secured funding, tooling, and lab capability.</li>
+          <li>Implemented modular subsystems for rapid iteration and easier maintenance.</li>
+          <li>Improved suspension control and electrical architecture to increase reliability.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="p3" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">Buffalo Bytes — Agile Modular Robot</h3>
+        <div class="glx-meta">Generative design • Print time reduction • Robust assembly</div>
+        <ul>
+          <li>Used generative design to minimize weight/print time without sacrificing stiffness.</li>
+          <li>Designed clip-in 3D-printed wheels to reduce part count and assembly steps.</li>
+          <li>Reinforced motor mount for durability; simplified field serviceability.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="p4" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-4.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">Wearable Bioimpedance — Textile Electrodes</h3>
+        <div class="glx-meta">Biomedical R&D • CHF monitoring • Materials evaluation</div>
+        <ul>
+          <li>Fabricated phantom tissues and evaluated textile electrodes for signal fidelity and comfort.</li>
+          <li>Benchmarked materials to improve accuracy and long-term reliability of wearable sensing.</li>
+          <li>Contributed documentation and figures for posters/papers.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="p5" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-5.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">SAR Drone — Generative Design</h3>
+        <div class="glx-meta">6-person team • 3D-printed chassis • Force distribution sims</div>
+        <ul>
+          <li>Optimized for weight and cost while maintaining stiffness and printability.</li>
+          <li>Created modular components to simplify repair and part swaps.</li>
+          <li>Documented design rules for open-source reuse.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="p6" class="glightbox-desc">
+    <div class="glightbox-content">
+      <img src="assets/img/portfolio/portfolio-6.jpg" alt="">
+      <div class="glx-body">
+        <h3 class="glx-title">Robotics Club @ UB — President</h3>
+        <div class="glx-meta">Leadership • Program growth • Systems portfolio</div>
+        <ul>
+          <li>Scaled membership from 8 → 50+ and launched four active robotics systems.</li>
+          <li>Ran hands-on workshops: Fusion 360, 3D printing, soldering, intro controls.</li>
+          <li>Coordinated outreach and lab operations, focusing on safe, repeatable builds.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Init -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year')?.textContent = new Date().getFullYear();
+
+    // Initialize GLightbox (works for anchors with .glightbox)
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: false,
+      plyr: { css: '' } // keep default
+    });
   </script>
 </body>
 </html>
