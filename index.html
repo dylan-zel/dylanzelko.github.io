@@ -1,129 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dylan Zelko — Portfolio</title>
 
-    <title>Dylan Zelko – Portfolio</title>
-    <meta content="Portfolio of Dylan Zelko" name="description" />
-    <meta content="Dylan Zelko, Robotics, Engineering, Portfolio" name="keywords" />
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700"
-      rel="stylesheet"
-    />
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Base theme CSS from the template (optional but fine to keep) -->
+  <link href="assets/css/style.css" rel="stylesheet" />
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-  </head>
+  <!-- Minimal dark overrides for this layout -->
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171a21;
+      --panel-2:#1f2330;
+      --text:#e9edf1;
+      --muted:#aab2c0;
+      --brand:#ffd04d;
+      --chip:#282d3b;
+      --chip-active:#32394d;
+      --border:rgba(255,255,255,.06);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    html,body{background:var(--bg); color:var(--text); font-family: "Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .sidebar{
+      background:var(--panel);
+      border-right:1px solid var(--border);
+      min-height:100vh;
+      position:sticky; top:0;
+      padding:28px 22px;
+    }
+    .avatar{
+      width:96px; height:96px; object-fit:cover; border-radius:18px; box-shadow:var(--shadow);
+    }
+    .tag{display:inline-block; padding:6px 10px; border-radius:10px; background:var(--chip); color:var(--muted); font-size:.8rem}
+    .sidebar .item{border-bottom:1px dashed var(--border); padding:14px 0}
+    .sidebar .label{color:var(--muted); font-size:.8rem; letter-spacing:.02em}
+    .sidebar .value a{color:var(--text)}
+    .soc a{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:var(--chip); margin-right:8px}
+    .main{
+      padding:28px;
+    }
+    .topnav{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:8px 12px;
+      margin-bottom:18px;
+    }
+    .topnav .nav-link{
+      color:var(--muted); padding:10px 14px; border-radius:12px;
+    }
+    .topnav .nav-link.active{background:var(--chip-active); color:var(--text); font-weight:600}
+    .section-title h2{
+      font-weight:700; letter-spacing:.3px; margin:6px 0 2px;
+    }
+    .section-title .underline{
+      width:46px; height:3px; background:var(--brand); border-radius:3px; margin-bottom:14px;
+    }
+    /* Filters */
+    #portfolio-filters{
+      display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 22px;
+    }
+    #portfolio-filters li{
+      list-style:none; background:var(--chip); color:var(--muted);
+      padding:8px 14px; border-radius:999px; cursor:pointer; font-size:.9rem;
+      border:1px solid var(--border);
+    }
+    #portfolio-filters li.filter-active{background:var(--chip-active); color:var(--text); border-color:transparent}
+    /* Cards */
+    .project{
+      background:var(--panel-2); border:1px solid var(--border); border-radius:16px; overflow:hidden;
+      transition:transform .15s ease, box-shadow .2s ease;
+    }
+    .project:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .project img{width:100%; height:190px; object-fit:cover}
+    .project .p-body{padding:12px 14px}
+    .project h5{font-size:1rem; margin:0 0 4px}
+    .project .meta{color:var(--muted); font-size:.85rem}
+    .footer{
+      color:var(--muted); font-size:.85rem; padding:18px 0 6px; text-align:center;
+    }
+    @media (max-width: 991.98px){
+      .sidebar{position:static; min-height:auto; border-right:none; border-bottom:1px solid var(--border)}
+    }
+  </style>
+</head>
+<body>
 
-  <body>
-    <!-- ======= Main Layout ======= -->
-    <div class="container-fluid">
-      <div class="row">
-        <!-- LEFT BIO COLUMN -->
-        <aside class="col-lg-3 col-md-4 bg-light p-4 vh-100 sticky-top">
-          <div class="text-center">
-            <img
-              src="assets/img/profile.jpg"
-              class="img-fluid rounded-circle mb-3"
-              alt="Your photo"
-              style="max-width: 150px;"
-            />
-            <h2>Dylan Zelko</h2>
-            <p>Mechanical Engineer • Robotics Lead • Additive Manufacturing</p>
-          </div>
+  <div class="container-fluid">
+    <div class="row g-0">
 
-          <hr />
-
+      <!-- ============== LEFT SIDEBAR ============== -->
+      <aside class="col-lg-3 sidebar">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img src="assets/img/profile.jpg" alt="Dylan Zelko headshot" class="avatar">
           <div>
-            <h5>About Me</h5>
-            <p>
-              Graduate student in Robotics at UB. Project lead for NASA Lunabotics
-              and Mars Rover research. Passionate about advanced manufacturing,
-              systems engineering, and rover design.
-            </p>
+            <h4 class="mb-1">Dylan Zelko</h4>
+            <span class="tag">Mechanical & Robotics</span>
           </div>
+        </div>
 
-          <hr />
+        <div class="item">
+          <div class="label">EMAIL</div>
+          <div class="value"><a href="mailto:dylanzel@buffalo.edu">dylanzel@buffalo.edu</a></div>
+        </div>
+        <div class="item">
+          <div class="label">PHONE</div>
+          <div class="value"><a href="tel:+19148178127">+1 (914) 817-8127</a></div>
+        </div>
+        <div class="item">
+          <div class="label">LOCATION</div>
+          <div class="value">Buffalo, NY, USA</div>
+        </div>
 
-          <div>
-            <h5>Contact</h5>
-            <p>
-              <i class="bi bi-envelope"></i>
-              <a href="mailto:dylanzel@buffalo.edu">dylanzel@buffalo.edu</a>
-            </p>
-            <p>
-              <i class="bi bi-phone"></i>
-              <a href="tel:+19148178127">+1 (914) 817-8127</a>
-            </p>
-            <p>
-              <a href="https://linkedin.com/in/dylanzelko" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a><br />
-              <a href="https://github.com/dylanzelko" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-            </p>
-          </div>
-        </aside>
+        <div class="mt-3 soc">
+          <a href="https://linkedin.com/in/dylanzelko" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/dylanzelko" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="mailto:dylanzel@buffalo.edu" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        </div>
 
-        <!-- RIGHT PORTFOLIO COLUMN -->
-        <main class="col-lg-9 col-md-8 p-4">
-          <div class="section-title">
-            <h2>Portfolio</h2>
-            <p>Selected Work</p>
-          </div>
+        <hr class="my-4" />
 
-          <div class="row portfolio-container">
-            <!-- Portfolio Item Template -->
-            <div class="col-lg-4 col-md-6 portfolio-item">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/placeholder.jpg"
-                  class="img-fluid rounded"
-                  alt="Project thumbnail"
-                />
-                <div class="portfolio-info">
-                  <h4>Project Title<br />Subtitle</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/placeholder.jpg"
-                      class="portfolio-lightbox"
-                      title="Preview"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a href="#" target="_blank" title="Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
+        <div>
+          <div class="label mb-1">BIO</div>
+          <p class="mb-2">
+            Grad student in Robotics at UB. Lead for NASA Lunabotics & Mars rover research. I design and build rover chassis, custom wheels, and test rigs; heavy into DfAM, FEA and systems engineering.
+          </p>
+          <a class="btn btn-sm btn-outline-light" href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text me-1"></i> Resume (PDF)</a>
+        </div>
+      </aside>
+
+      <!-- ============== RIGHT MAIN ============== -->
+      <main class="col-lg-9 main">
+
+        <!-- Top nav (visual only; “Portfolio” active) -->
+        <div class="topnav">
+          <ul class="nav">
+            <li class="nav-item"><span class="nav-link disabled">About</span></li>
+            <li class="nav-item"><span class="nav-link disabled">Resume</span></li>
+            <li class="nav-item"><span class="nav-link active">Portfolio</span></li>
+            <li class="nav-item"><span class="nav-link disabled">Blog</span></li>
+            <li class="nav-item"><span class="nav-link disabled">Contact</span></li>
+          </ul>
+        </div>
+
+        <!-- Section title -->
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Filters -->
+        <ul id="portfolio-filters" class="mb-2">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-mech">Web design</li>
+          <li data-filter=".filter-apps">Applications</li>
+          <li data-filter=".filter-webdev">Web development</li>
+        </ul>
+
+        <!-- GRID -->
+        <div class="row gy-4 portfolio-container">
+          <!-- Project card TEMPLATE — duplicate and edit -->
+          <div class="col-sm-6 col-lg-4 portfolio-item filter-mech">
+            <div class="project">
+              <img src="assets/img/portfolio/portfolio-1.jpg" alt="Project preview">
+              <div class="p-body">
+                <h5>Finance</h5>
+                <div class="meta">Web design</div>
               </div>
             </div>
-            <!-- Duplicate above block for more projects -->
           </div>
-        </main>
-      </div>
+
+          <div class="col-sm-6 col-lg-4 portfolio-item filter-webdev">
+            <div class="project">
+              <img src="assets/img/portfolio/portfolio-2.jpg" alt="Project preview">
+              <div class="p-body">
+                <h5>Orion</h5>
+                <div class="meta">Web development</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 portfolio-item filter-mech">
+            <div class="project">
+              <img src="assets/img/portfolio/portfolio-3.jpg" alt="Project preview">
+              <div class="p-body">
+                <h5>Funda</h5>
+                <div class="meta">Web design</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more cards… just copy a .col-sm-6.col-lg-4 block and change:
+               - the outer class to the correct filter (filter-mech / filter-apps / filter-webdev)
+               - the image src
+               - the title and meta text
+          -->
+        </div>
+
+        <div class="footer">© <span id="year"></span> Dylan Zelko</div>
+      </main>
+
     </div>
+  </div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-  </body>
+  <!-- Filter + year script -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Isotope filtering
+    window.addEventListener('load', function () {
+      var grid = document.querySelector('.portfolio-container');
+      if (!grid) return;
+
+      var iso = new Isotope(grid, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
+
+      var filters = document.querySelectorAll('#portfolio-filters li');
+      filters.forEach(function (f) {
+        f.addEventListener('click', function () {
+          filters.forEach(el => el.classList.remove('filter-active'));
+          this.classList.add('filter-active');
+          var filterValue = this.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue });
+        });
+      });
+    });
+
+    // Optional: GLightbox for full-size previews (if you add links)
+    const lightbox = GLightbox({ selector: '.portfolio-lightbox' });
+  </script>
+</body>
 </html>
