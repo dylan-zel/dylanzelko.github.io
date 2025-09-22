@@ -25,7 +25,7 @@
 
   <!-- Custom Dark Styling -->
   <style>
-    :root {
+    :root{
       --bg:#0f1115;
       --panel:#171a21;
       --panel-2:#1f2330;
@@ -52,7 +52,7 @@
     .main{padding:28px}
     .section-title h2{font-weight:700;margin:0 0 12px}
 
-    /* Projects (cards) */
+    /* Project cards */
     .project{background:var(--panel-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .2s ease}
     .project:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
     .project img{width:100%;height:190px;object-fit:cover;display:block}
@@ -62,19 +62,30 @@
 
     .footer{color:var(--muted);font-size:.85rem;padding:18px 0 6px;text-align:center}
 
-    /* Hidden inline lightbox content containers */
+    /* ---- Lightbox content ---- */
     .glightbox-desc{display:none}
     .glightbox-content{
-      max-width:900px; margin:0 auto; color:#e9edf1;
-      background:#10131a; border:1px solid var(--border); border-radius:16px; overflow:hidden;
+      max-width:900px;margin:0 auto;color:#e9edf1;
+      background:#10131a;border:1px solid var(--border);border-radius:16px;overflow:hidden
     }
-    .glightbox-content img{width:100%; height:auto; display:block}
-    .glx-body{padding:18px 20px}
-    .glx-title{margin:0 0 8px; font-size:1.25rem; font-weight:700}
-    .glx-meta{color:var(--muted); margin-bottom:10px}
-    .glx-body ul{padding-left:18px; margin:0}
-    .glx-body li{margin:4px 0}
-    .glx-links a{color:#bcd7ff; text-decoration:underline}
+
+    /* Header + bullets inside popup */
+    .glx-header{padding:18px 20px;border-bottom:1px solid var(--border)}
+    .glx-title{margin:0;font-size:1.35rem;font-weight:700}
+    .glx-meta{color:var(--muted);margin-top:6px}
+    .glx-bullets{padding:18px 22px}
+    .glx-bullets ul{margin:0;padding-left:18px}
+    .glx-bullets li{margin:6px 0}
+
+    /* Swiper inside popup */
+    .glx-swiper{width:100%;background:#0f1219}
+    .glx-swiper .swiper-slide img{width:100%;height:auto;display:block}
+    .glx-swiper .swiper-slide video{width:100%;height:auto;display:block;background:#000}
+    .glx-swiper .swiper-button-prev,
+    .glx-swiper .swiper-button-next{color:#e9edf1}
+    .glx-swiper .swiper-pagination-bullet{background:#9fb4d6;opacity:.5}
+    .glx-swiper .swiper-pagination-bullet-active{opacity:1}
+
     @media (max-width:991.98px){
       .sidebar{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--border)}
     }
@@ -134,7 +145,7 @@
               <div class="project">
                 <img src="assets/img/portfolio/portfolio-1.jpg" alt="NASA Lunabotics">
                 <div class="p-body">
-                  <h5>NASA Lunabotics — Founder and Project Lead (2024/25)</h5>
+                  <h5>NASA Lunabotics — Founder & Project Lead</h5>
                   <div class="meta">Lunar regolith excavation rover</div>
                 </div>
               </div>
@@ -212,92 +223,198 @@
     </div>
   </div>
 
-  <!-- ===== Lightbox Content ===== -->
+  <!-- ================= Lightbox Content ================= -->
+
+  <!-- P1: NASA Lunabotics (with video slide) -->
   <div id="p1" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">NASA Lunabotics — Project Lead</h3>
-        <div class="glx-meta">Systems integration • FEA & DEM</div>
+        <div class="glx-meta">Systems integration • FEA & DEM • Team leadership</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <!-- Image slides -->
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-1.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p1-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p1-3.jpg" alt=""></div>
+
+          <!-- Video slide (upload your file to assets/video/lunabotics-demo.mp4) -->
+          <div class="swiper-slide">
+            <video controls preload="metadata" poster="assets/img/portfolio/portfolio-1.jpg">
+              <source src="assets/video/lunabotics-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- If you prefer YouTube instead of an mp4, replace the slide above with:
+          <div class="swiper-slide">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Lunabotics"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+          -->
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Designed 3D-printed wheels and excavation drum for optimized mass/output.</li>
-          <li>Ran ANSYS FEA + DEM for validation.</li>
-          <li>Led interdisciplinary team on dust-resistant mechanisms.</li>
+          <li>Led design of regolith excavation rover; coordinated ME/EE/Controls subteams.</li>
+          <li>Optimized 3D-printed traction wheels and drum excavator for mass vs. throughput.</li>
+          <li>Validated structures and granular flow with ANSYS FEA + DEM.</li>
+          <li>Implemented dust-resistant mechanisms and modular serviceability.</li>
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- P2: University Rover Challenge -->
   <div id="p2" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-2.png" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">University Rover Challenge — Founder</h3>
-        <div class="glx-meta">Mars analog rover • Modular subsystems</div>
+        <div class="glx-meta">Mars analog rover • Modular chassis • Electrical & suspension</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-2.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p2-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p2-3.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Founded team, secured funding, and lab facilities.</li>
-          <li>Improved suspension and electrical architecture.</li>
-          <li>Designed modular systems for rapid iteration.</li>
+          <li>Founded the team; secured funding, workspace, and tooling.</li>
+          <li>Defined modular subsystems to speed iteration and simplify maintenance.</li>
+          <li>Upgraded suspension and power architecture for reliability under load.</li>
+          <li>Built repeatable build/test procedures and documentation.</li>
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- P3: Autonomous Rover Platform -->
   <div id="p3" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-3.png" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">Autonomous Rover Platform</h3>
-        <div class="glx-meta">ROS2 & autonomy testbed</div>
+        <div class="glx-meta">ROS2 • Gazebo • URDF • Controls & autonomy testbed</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-3.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p3-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p3-3.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Developed as a personal platform for simulation & control stack testing.</li>
-          <li>Experimented with URDF, Gazebo, and autonomy modules.</li>
-          <li>Quick-swap hardware for iterative experiments.</li>
+          <li>Built a personal platform for experimenting with nav stack and autonomy.</li>
+          <li>Created URDF model and Gazebo scenarios for simulation-first development.</li>
+          <li>Quick-swap hardware layout to iterate sensors, motor drivers, and firmware.</li>
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- P4: Buffalo Bytes -->
   <div id="p4" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-4.png" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">Buffalo Bytes — Researcher</h3>
-        <div class="glx-meta">Generative design • Robust assembly</div>
+        <div class="glx-meta">Platform redesign • Generative concepts • Field serviceability</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-4.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p4-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p4-3.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Reduced part count with clip-in wheels.</li>
-          <li>Strengthened motor mounts for durability.</li>
-          <li>Streamlined serviceability for field use.</li>
+          <li>Reduced part count with clip-in wheel design and consolidated fasteners.</li>
+          <li>Reinforced motor mount and joints for crash resistance.</li>
+          <li>Documented assembly steps to cut build time and errors.</li>
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- P5: Generative Design Drone -->
   <div id="p5" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-5.png" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">Generative Design Drone</h3>
-        <div class="glx-meta">3D-printed chassis • Force distribution</div>
+        <div class="glx-meta">Lightweight chassis • Printability • Force distribution</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-5.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p5-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p5-3.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Optimized weight/cost while maintaining stiffness.</li>
-          <li>Built modular components for repairability.</li>
-          <li>Published open-source design rules.</li>
+          <li>Applied generative design for weight/cost while preserving stiffness.</li>
+          <li>Split into modular arms/centerplate for easy repair and tuning.</li>
+          <li>Benchmarked print times/material usage to select processes.</li>
         </ul>
       </div>
     </div>
   </div>
 
+  <!-- P6: Arduino Testing Platform -->
   <div id="p6" class="glightbox-desc">
     <div class="glightbox-content">
-      <img src="assets/img/portfolio/portfolio-6.jpg" alt="">
-      <div class="glx-body">
+      <div class="glx-header">
         <h3 class="glx-title">Arduino Testing Platform</h3>
-        <div class="glx-meta">Workshops • Intro robotics</div>
+        <div class="glx-meta">Workshops • Onboarding • Intro to sensors/controls</div>
+      </div>
+
+      <div class="swiper glx-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/portfolio/portfolio-6.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p6-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/portfolio/p6-3.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="glx-bullets">
         <ul>
-          <li>Designed for workshops & outreach at UB Robotics Club.</li>
-          <li>Simple, low-cost, robust platform for teaching basics.</li>
-          <li>Helped onboard new members into sensors & control.</li>
+          <li>Designed a low-cost robot for club workshops and outreach events.</li>
+          <li>Created labs covering PWM, encoders, simple control, and serial debug.</li>
+          <li>Standardized parts so newcomers can build and iterate quickly.</li>
         </ul>
       </div>
     </div>
@@ -311,7 +428,31 @@
   <!-- Init -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const lightbox = GLightbox({ selector: '.glightbox' });
+
+    function initSwipers(ctx = document){
+      ctx.querySelectorAll('.glx-swiper').forEach(el => {
+        if (el.dataset.swiperInited) return; // prevent double init
+        new Swiper(el, {
+          loop: true,
+          spaceBetween: 12,
+          slidesPerView: 1,
+          pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+          navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') }
+        });
+        el.dataset.swiperInited = '1';
+      });
+    }
+
+    // If content appears inline for any reason
+    initSwipers();
+
+    // Initialize inside the modal when it opens
+    lightbox.on('open', () => {
+      const modal = document.querySelector('.glightbox-container') || document;
+      initSwipers(modal);
+    });
   </script>
 </body>
 </html>
