@@ -1,150 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dylan Zelko Portfolio</title>
+<style>
+  :root {
+    --bg:#0f1115;
+    --panel:#171a21;
+    --panel-2:#1f2330;
+    --text:#e9edf1;
+    --muted:#aab2c0;
+    --border:rgba(255,255,255,.06);
+    --radius:14px;
+    --shadow:0 10px 25px rgba(0,0,0,.35);
+  }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
+  html,body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+  }
 
-  <!-- Bootstrap CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  .sidebar {
+    background: var(--panel);
+    padding: 28px 22px;
+    min-height: 100vh;
+    border-right: 1px solid var(--border);
+  }
 
-  <!-- Custom CSS -->
-  <style>
-    :root{
-      --panel:#171a21; --panel-2:#1f2330;
-      --text:#e9edf1; --muted:#aab2c0;
-      --border:rgba(255,255,255,.06); --radius:14px;
-      --shadow:0 10px 25px rgba(0,0,0,.35);
-    }
+  .main {
+    padding: 32px;
+  }
 
-    /* === Background === */
-    html,body {
-      background: url("assets/img/moon.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text);
-      font-family: "Poppins", sans-serif;
-    }
-    /* Overlay for readability */
-    html::before {
-      content:"";
-      position:fixed; top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.65);
-      z-index:-1;
-    }
+  .sidebar h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
 
-    /* Layout */
-    .sidebar{
-      background:var(--panel);
-      padding:28px 22px;
-      min-height:100vh;
-      border-right:1px solid var(--border);
-    }
-    .main{
-      padding:32px;
-    }
+  .sidebar .tag {
+    display:inline-block;
+    background:#2a3142;
+    padding:4px 10px;
+    border-radius:8px;
+    font-size:.85rem;
+    margin-bottom:16px;
+  }
 
-    /* Sidebar elements */
-    .sidebar h2{font-size:1.5rem; font-weight:600; margin-bottom:4px}
-    .sidebar .tag{display:inline-block; background:#2a3142; padding:4px 10px; border-radius:8px; font-size:.85rem; margin-bottom:16px}
-    .sidebar .label{font-size:.8rem; font-weight:600; color:var(--muted); margin-top:14px}
-    .sidebar .value{margin-bottom:8px}
-    .sidebar .soc a{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; margin-right:8px; border-radius:10px; background:#2a3142; color:var(--text)}
-    .sidebar .bio{margin-top:18px; font-size:.9rem; line-height:1.4}
-    .resume-btn{display:inline-block; margin-top:14px; padding:8px 14px; border:1px solid var(--border); border-radius:8px; color:var(--text); text-decoration:none; font-size:.9rem}
-    .resume-btn:hover{background:#2a3142}
+  .sidebar .label { font-size:.8rem; font-weight:600; color:var(--muted); margin-top:14px; }
+  .sidebar .value { margin-bottom:8px; }
+  .sidebar .soc a {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px; height:38px;
+    margin-right:8px;
+    border-radius:10px;
+    background:#2a3142;
+    color:var(--text);
+  }
 
-    /* Section */
-    .section-title h2{font-size:1.4rem; font-weight:700; margin-bottom:18px}
+  .sidebar .bio { margin-top:18px; font-size:.9rem; line-height:1.4; }
+  .resume-btn {
+    display:inline-block;
+    margin-top:14px;
+    padding:8px 14px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:.9rem;
+  }
+  .resume-btn:hover { background:#2a3142; }
 
-    /* Portfolio grid */
-    .portfolio-container{display:flex; flex-wrap:wrap; gap:20px}
-    .portfolio-item{flex:0 0 calc(33.333% - 20px); background:var(--panel-2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
-    .portfolio-item img{width:100%; height:180px; object-fit:cover}
-    .portfolio-info{padding:12px}
-    .portfolio-info h5{margin:0 0 4px; font-size:1rem; font-weight:600}
-    .portfolio-info .meta{font-size:.85rem; color:var(--muted)}
-    @media(max-width:992px){.portfolio-item{flex:0 0 calc(50% - 20px)}}
-    @media(max-width:576px){.portfolio-item{flex:0 0 100%}}
-  </style>
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Sidebar -->
-      <aside class="col-lg-3 col-md-4 sidebar">
-        <h2>Dylan Zelko</h2>
-        <div class="tag">Mechanical & Robotics</div>
+  .section-title h2 { font-size:1.4rem; font-weight:700; margin-bottom:18px; }
 
-        <div class="label">Email</div>
-        <div class="value"><a href="mailto:dylanzel@buffalo.edu">dylanzel@buffalo.edu</a></div>
+  .portfolio-container { display:flex; flex-wrap:wrap; gap:20px; }
+  .portfolio-item {
+    flex:0 0 calc(33.333% - 20px);
+    background:var(--panel-2);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .portfolio-item img { width:100%; height:180px; object-fit:cover; }
+  .portfolio-info { padding:12px; }
+  .portfolio-info h5 { margin:0 0 4px; font-size:1rem; font-weight:600; }
+  .portfolio-info .meta { font-size:.85rem; color:var(--muted); }
 
-        <div class="label">Phone</div>
-        <div class="value">+1 (914) 817-8127</div>
-
-        <div class="label">Location</div>
-        <div class="value">Buffalo, NY, USA</div>
-
-        <div class="soc mt-3">
-          <a href="https://www.linkedin.com/in/dylanzelko"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/dylanzel"><i class="bi bi-github"></i></a>
-          <a href="mailto:dylanzel@buffalo.edu"><i class="bi bi-envelope"></i></a>
-        </div>
-
-        <div class="bio">
-          Grad student in Robotics at UB. Lead for NASA Lunabotics & Mars rover research.  
-          I design and build rover chassis, custom wheels, and test rigs;  
-          heavy into DfAM, FEA and systems engineering.
-        </div>
-
-        <a class="resume-btn" href="assets/Dylan-Zelko-Resume.pdf" target="_blank">
-          <i class="bi bi-file-earmark-text"></i> Resume (PDF)
-        </a>
-      </aside>
-
-      <!-- Main -->
-      <main class="col-lg-9 col-md-8 main">
-        <div class="section-title">
-          <h2>Selected Work</h2>
-        </div>
-
-        <div class="portfolio-container">
-          <!-- Project template -->
-          <div class="portfolio-item">
-            <img src="assets/img/portfolio/portfolio-1.jpg" alt="Lunabotics Rover">
-            <div class="portfolio-info">
-              <h5>Lunabotics Rover</h5>
-              <div class="meta">Robotics • NASA Competition</div>
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <img src="assets/img/portfolio/portfolio-2.jpg" alt="Custom Gearbox">
-            <div class="portfolio-info">
-              <h5>Custom Gearbox</h5>
-              <div class="meta">Mechanical • CAD + Trade Study</div>
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <img src="assets/img/portfolio/portfolio-3.jpg" alt="ROS2 Simulation">
-            <div class="portfolio-info">
-              <h5>ROS2 Simulation</h5>
-              <div class="meta">Software • Gazebo & URDF</div>
-            </div>
-          </div>
-
-          <!-- Add more projects by copying the block above -->
-        </div>
-
-        <footer class="mt-4" style="font-size:.8rem; color:var(--muted);">
-          © 2025 Dylan Zelko
-        </footer>
-      </main>
-    </div>
-  </div>
-</body>
-</html>
+  @media(max-width:992px){ .portfolio-item{flex:0 0 calc(50% - 20px);} }
+  @media(max-width:576px){ .portfolio-item{flex:0 0 100%;} }
+</style>
