@@ -65,12 +65,22 @@
     .muted{color:var(--muted)}
 
     /* ---- Unified media sizing (16:9 everywhere) ---- */
-    /* Any image inside a Bootstrap ratio box fills the frame */
     .ratio img,
     .ratio iframe{
       width:100%;
       height:100%;
-      object-fit:cover; /* crops politely while keeping aspect ratio */
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Fix: allow modal images to expand, override style.css max-width */
+    .modal .ratio img,
+    .modal .carousel-item img,
+    .modal .img-fluid {
+      max-width: none !important;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display:block;
     }
   </style>
