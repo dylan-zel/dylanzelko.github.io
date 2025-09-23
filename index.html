@@ -13,26 +13,28 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
 
-  <!-- Bootstrap (CSS only) -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Base CSS from template (keep for resets) -->
+  <!-- Base CSS -->
   <link href="assets/css/style.css" rel="stylesheet" />
 
   <!-- Custom Dark Styling -->
   <style>
-    :root{
+    :root {
       --bg:#0f1115;
       --panel:#171a21;
       --panel-2:#1f2330;
       --text:#e9edf1;
       --muted:#aab2c0;
       --border:rgba(255,255,255,.06);
+      --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     html,body{background:var(--bg);color:var(--text);font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
-
     header#header,.hero,.breadcrumbs{display:none!important}
     section{background:transparent!important}
 
@@ -48,8 +50,8 @@
     .main{padding:28px}
     .section-title h2{font-weight:700;margin:0 0 12px}
 
-    /* Project cards */
-    .project{background:var(--panel-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .2s ease;position:relative}
+    /* Projects */
+    .project{background:var(--panel-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .2s ease}
     .project:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
     .project img{width:100%;height:190px;object-fit:cover;display:block}
     .project .p-body{padding:12px 14px}
@@ -58,17 +60,12 @@
 
     .footer{color:var(--muted);font-size:.85rem;padding:18px 0 6px;text-align:center}
 
-    /* Modal (dark) */
-    .modal-content{background:#10131a;color:var(--text);border:1px solid var(--border);border-radius:16px}
+    /* Modal overrides */
+    .modal-content{background:#10131a;color:#e9edf1;border-radius:16px}
     .modal-header{border-bottom:1px solid var(--border)}
     .modal-footer{border-top:1px solid var(--border)}
-    .modal .muted{color:var(--muted)}
-    .modal ul{margin:0 0 0 1rem}
-    .modal li{margin:.4rem 0}
-    .ratio video{background:#000}
-    @media (max-width:991.98px){
-      .sidebar{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--border)}
-    }
+    .modal-title{font-weight:700}
+    .muted{color:var(--muted);font-size:.9rem}
   </style>
 </head>
 <body>
@@ -119,82 +116,64 @@
         </div>
 
         <div class="row gy-4">
-          <!-- Card 1 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal1">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-1.jpg" alt="NASA Lunabotics">
-                <div class="p-body">
-                  <h5>NASA Lunabotics — Founder & Project Lead</h5>
-                  <div class="meta">Lunar regolith excavation rover</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal1">
+              <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+              <div class="p-body">
+                <h5>NASA Lunabotics — Project Lead</h5>
+                <div class="meta">Lunar regolith excavation rover</div>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal2">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-2.png" alt="University Rover Challenge">
-                <div class="p-body">
-                  <h5>University Rover Challenge — Founder</h5>
-                  <div class="meta">Building rovers for the University Rover Challenge</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal2">
+              <img src="assets/img/portfolio/portfolio-2.png" alt="">
+              <div class="p-body">
+                <h5>University Rover Challenge — Founder</h5>
+                <div class="meta">Mars analog rover competition</div>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal3">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-3.png" alt="Autonomous Rover Platform">
-                <div class="p-body">
-                  <h5>Autonomous Rover Platform</h5>
-                  <div class="meta">Personal ROS2 testing rover</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal3">
+              <img src="assets/img/portfolio/portfolio-3.png" alt="">
+              <div class="p-body">
+                <h5>Autonomous Rover Platform</h5>
+                <div class="meta">Personal ROS2 testing rover</div>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 4 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal4">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-4.png" alt="Buffalo Bytes">
-                <div class="p-body">
-                  <h5>Buffalo Bytes — Researcher</h5>
-                  <div class="meta">Platform redesign</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal4">
+              <img src="assets/img/portfolio/portfolio-4.png" alt="">
+              <div class="p-body">
+                <h5>Buffalo Bytes — Researcher</h5>
+                <div class="meta">Platform redesign</div>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 5 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal5">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-5.png" alt="Generative Design Drone">
-                <div class="p-body">
-                  <h5>Generative Design Drone</h5>
-                  <div class="meta">Weight & cost optimized</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal5">
+              <img src="assets/img/portfolio/portfolio-5.png" alt="">
+              <div class="p-body">
+                <h5>Generative Design Drone</h5>
+                <div class="meta">Weight & cost optimized</div>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 6 -->
           <div class="col-sm-6 col-lg-4">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal6">
-              <div class="project">
-                <img src="assets/img/portfolio/portfolio-6.jpg" alt="Arduino Testing Platform">
-                <div class="p-body">
-                  <h5>Arduino Testing Platform</h5>
-                  <div class="meta">Intro robotics workshops</div>
-                </div>
+            <div class="project" data-bs-toggle="modal" data-bs-target="#modal6">
+              <img src="assets/img/portfolio/portfolio-6.jpg" alt="">
+              <div class="p-body">
+                <h5>Arduino Testing Platform</h5>
+                <div class="meta">Intro robotics workshops</div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
 
@@ -203,10 +182,10 @@
     </div>
   </div>
 
-  <!-- ---------- Modals (text bullets) ---------- -->
+  <!-- =============== Modals =============== -->
 
   <!-- Modal 1 -->
-  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal1" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -214,20 +193,18 @@
             <h5 class="modal-title">NASA Lunabotics — Project Lead</h5>
             <div class="muted">Systems integration • FEA & DEM • Team leadership</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <!-- Optional video: place file at assets/video/lunabotics-demo.mp4 -->
           <div class="ratio ratio-16x9 mb-3">
-            <video controls poster="assets/img/portfolio/portfolio-1.jpg">
-              <source src="assets/video/lunabotics-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe src="https://www.youtube.com/embed/8cLWB8mPoRg" title="NASA Lunabotics Project Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <ul>
-            <li>Led design of regolith excavation rover; coordinated ME/EE/Controls subteams.</li>
+            <li>Led cross-disciplinary ME/EE/Controls team for lunar regolith excavation rover.</li>
             <li>Optimized 3D-printed traction wheels and drum excavator for mass vs throughput.</li>
-            <li>Validated structures and granular flow using ANSYS FEA + DEM.</li>
+            <li>Validated structures and granular flow via ANSYS FEA + DEM.</li>
             <li>Implemented dust-resistant mechanisms and modular serviceability.</li>
           </ul>
         </div>
@@ -239,22 +216,22 @@
   </div>
 
   <!-- Modal 2 -->
-  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal2" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
             <h5 class="modal-title">University Rover Challenge — Founder</h5>
-            <div class="muted">Mars analog rover • Modular subsystems</div>
+            <div class="muted">Mars analog rover • Modular chassis</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <ul>
             <li>Founded the team; secured funding, workspace, and tooling.</li>
             <li>Defined modular subsystems to speed iteration and simplify maintenance.</li>
             <li>Upgraded suspension and power architecture for reliability under load.</li>
-            <li>Established repeatable build/test procedures and documentation.</li>
+            <li>Built repeatable build/test procedures and documentation.</li>
           </ul>
         </div>
         <div class="modal-footer">
@@ -265,21 +242,21 @@
   </div>
 
   <!-- Modal 3 -->
-  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal3" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
             <h5 class="modal-title">Autonomous Rover Platform</h5>
-            <div class="muted">ROS2 • Gazebo • URDF • Controls & autonomy testbed</div>
+            <div class="muted">ROS2 • Gazebo • URDF • Controls</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <ul>
             <li>Built a personal platform for experimenting with nav stack and autonomy.</li>
             <li>Created URDF model and Gazebo scenarios for simulation-first development.</li>
-            <li>Quick-swap hardware to iterate sensors, motor drivers, and firmware.</li>
+            <li>Quick-swap hardware layout to iterate sensors, motor drivers, and firmware.</li>
           </ul>
         </div>
         <div class="modal-footer">
@@ -290,15 +267,15 @@
   </div>
 
   <!-- Modal 4 -->
-  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal4" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
             <h5 class="modal-title">Buffalo Bytes — Researcher</h5>
-            <div class="muted">Platform redesign • Generative concepts • Serviceability</div>
+            <div class="muted">Platform redesign • Generative concepts</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <ul>
@@ -315,21 +292,21 @@
   </div>
 
   <!-- Modal 5 -->
-  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal5" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
             <h5 class="modal-title">Generative Design Drone</h5>
-            <div class="muted">Lightweight chassis • Printability • Force distribution</div>
+            <div class="muted">Lightweight chassis • Printability</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <ul>
             <li>Applied generative design for weight/cost while preserving stiffness.</li>
             <li>Split into modular arms/centerplate for easy repair and tuning.</li>
-            <li>Benchmarked print times and material usage to select processes.</li>
+            <li>Benchmarked print times/material usage to select processes.</li>
           </ul>
         </div>
         <div class="modal-footer">
@@ -340,15 +317,15 @@
   </div>
 
   <!-- Modal 6 -->
-  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="modal6" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
             <h5 class="modal-title">Arduino Testing Platform</h5>
-            <div class="muted">Workshops • Onboarding • Intro to sensors/controls</div>
+            <div class="muted">Workshops • Onboarding</div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <ul>
@@ -364,7 +341,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS (includes Popper) -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
