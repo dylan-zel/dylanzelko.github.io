@@ -30,7 +30,6 @@
       --text:#e9edf1;
       --muted:#aab2c0;
       --border:rgba(255,255,255,.06);
-      --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     html,body{background:var(--bg);color:var(--text);font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -43,14 +42,14 @@
     .name-row h4{margin:0 0 6px}
     .tag{display:inline-block;padding:6px 10px;border-radius:10px;background:#282d3b;color:var(--muted);font-size:.8rem}
     .sidebar .item{border-bottom:1px dashed var(--border);padding:14px 0}
-    .sidebar .label{color:var(--muted);font-size:.8rem;letter-spacing:.02em}
+    .sidebar .label{color:var(--muted);font-size:.8rem}
     .soc a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#282d3b;margin-right:8px}
 
     /* Main */
     .main{padding:28px}
     .section-title h2{font-weight:700;margin:0 0 12px}
 
-    /* Projects */
+    /* Project cards */
     .project{background:var(--panel-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .2s ease}
     .project:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
     .project img{width:100%;height:190px;object-fit:cover;display:block}
@@ -60,12 +59,11 @@
 
     .footer{color:var(--muted);font-size:.85rem;padding:18px 0 6px;text-align:center}
 
-    /* Modal overrides */
+    /* Modal */
     .modal-content{background:#10131a;color:#e9edf1;border-radius:16px}
     .modal-header{border-bottom:1px solid var(--border)}
     .modal-footer{border-top:1px solid var(--border)}
-    .modal-title{font-weight:700}
-    .muted{color:var(--muted);font-size:.9rem}
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
@@ -109,70 +107,53 @@
         </div>
       </aside>
 
-      <!-- Main Portfolio -->
+      <!-- Main -->
       <main class="col-lg-9 col-md-8 main">
         <div class="section-title">
           <h2>Selected Work</h2>
         </div>
 
         <div class="row gy-4">
+          <!-- Cards -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal1">
               <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
-              <div class="p-body">
-                <h5>NASA Lunabotics — Project Lead</h5>
-                <div class="meta">Lunar regolith excavation rover</div>
-              </div>
+              <div class="p-body"><h5>NASA Lunabotics</h5><div class="meta">Project Lead</div></div>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal2">
               <img src="assets/img/portfolio/portfolio-2.png" alt="">
-              <div class="p-body">
-                <h5>University Rover Challenge — Founder</h5>
-                <div class="meta">Mars analog rover competition</div>
-              </div>
+              <div class="p-body"><h5>University Rover Challenge</h5><div class="meta">Founder</div></div>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal3">
               <img src="assets/img/portfolio/portfolio-3.png" alt="">
-              <div class="p-body">
-                <h5>Autonomous Rover Platform</h5>
-                <div class="meta">Personal ROS2 testing rover</div>
-              </div>
+              <div class="p-body"><h5>Autonomous Rover Platform</h5><div class="meta">ROS2 Testbed</div></div>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal4">
               <img src="assets/img/portfolio/portfolio-4.png" alt="">
-              <div class="p-body">
-                <h5>Buffalo Bytes — Researcher</h5>
-                <div class="meta">Platform redesign</div>
-              </div>
+              <div class="p-body"><h5>Buffalo Bytes</h5><div class="meta">Researcher</div></div>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal5">
               <img src="assets/img/portfolio/portfolio-5.png" alt="">
-              <div class="p-body">
-                <h5>Generative Design Drone</h5>
-                <div class="meta">Weight & cost optimized</div>
-              </div>
+              <div class="p-body"><h5>Generative Design Drone</h5><div class="meta">Optimized Chassis</div></div>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal6">
               <img src="assets/img/portfolio/portfolio-6.jpg" alt="">
-              <div class="p-body">
-                <h5>Arduino Testing Platform</h5>
-                <div class="meta">Intro robotics workshops</div>
-              </div>
+              <div class="p-body"><h5>Arduino Testing Platform</h5><div class="meta">Workshops</div></div>
             </div>
           </div>
         </div>
@@ -182,169 +163,105 @@
     </div>
   </div>
 
-  <!-- =============== Modals =============== -->
+  <!-- ========== Modals ========== -->
 
-  <!-- Modal 1 -->
+  <!-- Modal 1 (YouTube) -->
   <div class="modal fade" id="modal1" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">NASA Lunabotics — Project Lead</h5>
-            <div class="muted">Systems integration • FEA & DEM • Team leadership</div>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">NASA Lunabotics</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe src="https://www.youtube.com/embed/8cLWB8mPoRg" allowfullscreen></iframe>
         </div>
-        <div class="modal-body">
-          <div class="ratio ratio-16x9 mb-3">
-            <iframe src="https://www.youtube.com/embed/8cLWB8mPoRg" title="NASA Lunabotics Project Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <ul>
-            <li>Led cross-disciplinary ME/EE/Controls team for lunar regolith excavation rover.</li>
-            <li>Optimized 3D-printed traction wheels and drum excavator for mass vs throughput.</li>
-            <li>Validated structures and granular flow via ANSYS FEA + DEM.</li>
-            <li>Implemented dust-resistant mechanisms and modular serviceability.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
+        <ul>
+          <li>Led cross-disciplinary ME/EE/Controls team.</li>
+          <li>Optimized 3D-printed wheels and drum excavator.</li>
+          <li>Validated structures with ANSYS FEA + DEM.</li>
+        </ul>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- Modal 2 -->
+  <!-- Modal 2 (Carousel 2 imgs) -->
   <div class="modal fade" id="modal2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">University Rover Challenge — Founder</h5>
-            <div class="muted">Mars analog rover • Modular chassis</div>
+    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">University Rover Challenge</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <div id="carousel2" class="carousel slide mb-3" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="assets/img/portfolio/p2-1.jpg" class="d-block w-100" alt=""></div>
+            <div class="carousel-item"><img src="assets/img/portfolio/p2-2.jpg" class="d-block w-100" alt=""></div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
         </div>
-        <div class="modal-body">
-          <ul>
-            <li>Founded the team; secured funding, workspace, and tooling.</li>
-            <li>Defined modular subsystems to speed iteration and simplify maintenance.</li>
-            <li>Upgraded suspension and power architecture for reliability under load.</li>
-            <li>Built repeatable build/test procedures and documentation.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
+        <ul>
+          <li>Founded team; secured funding and lab space.</li>
+          <li>Developed modular subsystems.</li>
+          <li>Improved suspension and electronics.</li>
+        </ul>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- Modal 3 -->
+  <!-- Modal 3 (Carousel 2 imgs) -->
   <div class="modal fade" id="modal3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">Autonomous Rover Platform</h5>
-            <div class="muted">ROS2 • Gazebo • URDF • Controls</div>
+    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Autonomous Rover Platform</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <div id="carousel3" class="carousel slide mb-3" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="assets/img/portfolio/p3-1.jpg" class="d-block w-100" alt=""></div>
+            <div class="carousel-item"><img src="assets/img/portfolio/p3-2.jpg" class="d-block w-100" alt=""></div>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
         </div>
-        <div class="modal-body">
-          <ul>
-            <li>Built a personal platform for experimenting with nav stack and autonomy.</li>
-            <li>Created URDF model and Gazebo scenarios for simulation-first development.</li>
-            <li>Quick-swap hardware layout to iterate sensors, motor drivers, and firmware.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
+        <ul>
+          <li>Built personal ROS2 testbed.</li>
+          <li>Simulated in Gazebo with URDF models.</li>
+          <li>Iterated sensors and drivers quickly.</li>
+        </ul>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- Modal 4 -->
-  <div class="modal fade" id="modal4" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">Buffalo Bytes — Researcher</h5>
-            <div class="muted">Platform redesign • Generative concepts</div>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <ul>
-            <li>Reduced part count with clip-in wheel design and consolidated fasteners.</li>
-            <li>Reinforced motor mount and joints for crash resistance.</li>
-            <li>Documented assembly steps to cut build time and errors.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <!-- Modal 4 (No carousel) -->
+  <div class="modal fade" id="modal4" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Buffalo Bytes</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+    <div class="modal-body">
+      <ul>
+        <li>Redesigned rover platform with generative design concepts.</li>
+        <li>Improved robustness and serviceability.</li>
+      </ul>
     </div>
-  </div>
+  </div></div></div>
 
-  <!-- Modal 5 -->
-  <div class="modal fade" id="modal5" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">Generative Design Drone</h5>
-            <div class="muted">Lightweight chassis • Printability</div>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <ul>
-            <li>Applied generative design for weight/cost while preserving stiffness.</li>
-            <li>Split into modular arms/centerplate for easy repair and tuning.</li>
-            <li>Benchmarked print times/material usage to select processes.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <!-- Modal 5 (Single image) -->
+  <div class="modal fade" id="modal5" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Generative Design Drone</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+    <div class="modal-body">
+      <img src="assets/img/portfolio/p5-1.jpg" class="img-fluid mb-3" alt="">
+      <ul>
+        <li>Applied generative design for weight/cost savings.</li>
+        <li>Created modular chassis for easy repair.</li>
+      </ul>
     </div>
-  </div>
+  </div></div></div>
 
   <!-- Modal 6 -->
-  <div class="modal fade" id="modal6" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title">Arduino Testing Platform</h5>
-            <div class="muted">Workshops • Onboarding</div>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <ul>
-            <li>Designed a low-cost robot for club workshops and outreach events.</li>
-            <li>Created labs covering PWM, encoders, simple control, and serial debug.</li>
-            <li>Standardized parts so newcomers can build and iterate quickly.</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <div class="modal fade" id="modal6" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Arduino Testing Platform</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+    <div class="modal-body">
+      <ul>
+        <li>Built low-cost robot for workshops.</li>
+        <li>Helped onboard new members with sensors and controls.</li>
+      </ul>
     </div>
-  </div>
+  </div></div></div>
 
-  <!-- Vendor JS -->
+  <!-- Scripts -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
