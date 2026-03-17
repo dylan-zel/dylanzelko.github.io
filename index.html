@@ -131,6 +131,40 @@
       box-shadow:var(--shadow)
     }
 
+    .project .thumb{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project .thumb img{
+      transition:transform .25s ease;
+    }
+
+    .project .thumb::after{
+      content:"View Project";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,.28);
+      color:#fff;
+      font-size:.9rem;
+      font-weight:500;
+      letter-spacing:.03em;
+      opacity:0;
+      transition:opacity .2s ease;
+      pointer-events:none;
+    }
+
+    .project:hover .thumb img{
+      transform:scale(1.04);
+    }
+
+    .project:hover .thumb::after{
+      opacity:1;
+    }
+
     .project .p-body{padding:12px 14px 16px}
     .project h5{font-size:1rem;margin:0 0 4px}
     .project .meta{color:var(--muted);font-size:.86rem;margin-bottom:8px}
@@ -273,8 +307,10 @@
           <!-- 1 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal1">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-1.jpg" alt="NASA Lunabotics thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="NASA Lunabotics thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>NASA Lunabotics</h5>
@@ -293,8 +329,10 @@
           <!-- 2 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal2">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-2.png" alt="University Rover Challenge thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-2.png" alt="University Rover Challenge thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>University Rover Challenge</h5>
@@ -313,8 +351,10 @@
           <!-- 3 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal7">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/project7.png" alt="UGV for Testing and Prototyping" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/project7.png" alt="UGV for Testing and Prototyping" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>UGV for Testing and Prototyping</h5>
@@ -333,8 +373,10 @@
           <!-- 4 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal8">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/project8.png" alt="Lunar Regolith Test Platform" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/project8.png" alt="Lunar Regolith Test Platform" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>Test Platform for Lunar Regolith Excavation and Mobility</h5>
@@ -353,8 +395,10 @@
           <!-- 5 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal3">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-3.png" alt="Autonomous Rover Platform thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-3.png" alt="Autonomous Rover Platform thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>Autonomous Rover Platform</h5>
@@ -373,8 +417,10 @@
           <!-- 6 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal4">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-4.png" alt="Buffalo Bytes thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-4.png" alt="Buffalo Bytes thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>Buffalo Bytes</h5>
@@ -393,8 +439,10 @@
           <!-- 7 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal5">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-5.png" alt="Generative Design Drone thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-5.png" alt="Generative Design Drone thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>Generative Design Drone</h5>
@@ -413,8 +461,10 @@
           <!-- 8 -->
           <div class="col-sm-6 col-lg-4">
             <div class="project" data-bs-toggle="modal" data-bs-target="#modal6">
-              <div class="ratio ratio-16x9">
-                <img src="assets/img/portfolio/portfolio-6.jpg" alt="Arduino Robotics Platform thumbnail" loading="lazy">
+              <div class="thumb">
+                <div class="ratio ratio-16x9">
+                  <img src="assets/img/portfolio/portfolio-6.jpg" alt="Arduino Robotics Platform thumbnail" loading="lazy">
+                </div>
               </div>
               <div class="p-body">
                 <h5>Arduino Robotics Platform</h5>
